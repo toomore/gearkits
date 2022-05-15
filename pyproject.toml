@@ -11,6 +11,8 @@ classifiers = [
     "Topic :: Communications :: Email",
 ]
 readme = 'README.md'
+repository = 'https://github.com/toomore/gearkits'
+homepage = 'https://github.com/toomore/gearkits'
 
 [tool.poetry.dependencies]
 python = "^3.8"
