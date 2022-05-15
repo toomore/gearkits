@@ -1,28 +1,28 @@
 [tool.poetry]
-name = "gearkits"
-version = "0.1.0-alpha.0"
-description = "Gather all the general services api in basic usage. This package is built for what we need in our side projects of open source."
-license = 'MIT'
 authors = ["Toomore Chiang <toomore0929@gmail.com>"]
-keywords = ['API', 'AWS']
 classifiers = [
-    "Environment :: Web Environment",
-    "Framework :: AWS CDK",
-    "Topic :: Communications :: Email",
+  "Environment :: Web Environment",
+  "Framework :: AWS CDK",
+  "Topic :: Communications :: Email",
 ]
+description = "Gather all the general services api in basic usage. This package is built for what we need in our side projects of open source."
+homepage = 'https://github.com/toomore/gearkits'
+keywords = ['API', 'AWS']
+license = 'MIT'
+name = "gearkits"
 readme = 'README.md'
 repository = 'https://github.com/toomore/gearkits'
-homepage = 'https://github.com/toomore/gearkits'
+version = "0.1.0-alpha.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.27.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
-pylint = "^2.13.9"
 autopep8 = "^1.6.0"
+pylint = "^2.13.9"
+pytest = "^7.1"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
