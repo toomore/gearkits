@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gearkits"
-version = "0.1.0"
+version = "0.1.0-alpha.0"
 description = "Gather all the general services api in basic usage. This package is built for what we need in our side projects of open source."
 license = 'MIT'
 authors = ["Toomore Chiang <toomore0929@gmail.com>"]
