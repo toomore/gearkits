@@ -8,7 +8,9 @@ class IPInfo(Session):
 
     def __init__(self, token: str):
         super().__init__()
+        self.url = 'https://ipinfo.io/'
         self.token = token
+        self.headers.update({'Authorization': f'Bearer {self.token}'})
 
     def get(self, ip: str):
         ''' Get info
@@ -16,8 +18,4 @@ class IPInfo(Session):
         :param str ip: ip
 
         '''
-        headers = {
-            'Authorization': f'Bearer {self.token}',
-        }
-        return super().get(f'https://ipinfo.io/{ip}', headers=headers)
-
+        return super().get(f'{self.url}{ip}')

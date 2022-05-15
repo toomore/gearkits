@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "gearkits"
 version = "0.1.0"
-description = "Gather all the general services api in basic usage."
+description = "Gather all the general services api in basic usage. This package is built for what we need in our side projects of open source."
 license = 'MIT'
 authors = ["Toomore Chiang <toomore0929@gmail.com>"]
 keywords = ['API', 'AWS']
@@ -10,6 +10,7 @@ classifiers = [
     "Framework :: AWS CDK",
     "Topic :: Communications :: Email",
 ]
+readme = 'README.md'
 
 [tool.poetry.dependencies]
 python = "^3.8"
