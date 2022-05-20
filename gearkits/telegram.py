@@ -4,8 +4,8 @@ from typing import Any, Union
 from requests import Response, Session
 
 
-class TelegramBot(Session):
-    ''' TelegramBot '''
+class Telegram(Session):
+    ''' Telegram '''
 
     def __init__(self, token: str):
         super().__init__()
