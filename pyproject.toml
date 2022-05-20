@@ -12,11 +12,12 @@ license = 'MIT'
 name = "gearkits"
 readme = 'README.md'
 repository = 'https://github.com/toomore/gearkits'
-version = "0.2.0"
+version = "0.3.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.27.1"
+google-api-python-client = "^2.48.0"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"
@@ -45,3 +46,7 @@ warn_return_any = true
 implicit_reexport = false
 strict_equality = true
 # --strict end
+
+[[tool.mypy.overrides]]
+module = "gearkits.gsuite"
+ignore_missing_imports = true
