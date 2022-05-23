@@ -51,3 +51,7 @@ strict_equality = true
 [[tool.mypy.overrides]]
 module = "gearkits.gsuite"
 ignore_missing_imports = true
+
+[tool.pylint.main]
+disable=W0223
+generated-members=googleapiclient.discovery.*
