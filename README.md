@@ -13,3 +13,5 @@ or
 - telegram
 - gitlab
 - IPInfo
+- AWS(S3, SES)
+- Mattermost
