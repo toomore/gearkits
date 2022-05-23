@@ -6,9 +6,9 @@ on:
 
 jobs:
   run_test:
-    runs-on: ubuntu-20.04
     strategy:
       matrix:
+        os: ['ubuntu-20.04', 'ubuntu-22.04', 'macos-11', 'macos-12', 'windows-latest']
         python-version: ['3.9', '3.10']
     steps:
       - name: Checkout
@@ -32,9 +32,9 @@ jobs:
         run: PYTHONPATH=./ poetry run pytest -v ./
 
   run_pylint:
-    runs-on: ubuntu-20.04
     strategy:
       matrix:
+        os: ['ubuntu-20.04', 'ubuntu-22.04', 'macos-11', 'macos-12', 'windows-latest']
         python-version: ['3.9', '3.10']
     steps:
       - name: Checkout
@@ -58,9 +58,9 @@ jobs:
         run: poetry run pylint -v ./gearkits/
 
   run_mypy:
-    runs-on: ubuntu-20.04
     strategy:
       matrix:
+        os: ['ubuntu-20.04', 'ubuntu-22.04', 'macos-11', 'macos-12', 'windows-latest']
         python-version: ['3.9', '3.10']
     steps:
       - name: Checkout
@@ -82,3 +82,30 @@ jobs:
         run: poetry install
       - name: Run Pylint
         run: poetry run mypy ./gearkits
+
+  run_build:
+    needs: ['run_test', 'run_pylint', 'run_mypy']
+    strategy:
+      matrix:
+        os: ['ubuntu-20.04', 'ubuntu-22.04', 'macos-11', 'macos-12', 'windows-latest']
+        python-version: ['3.9', '3.10']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install libs
+        run: sudo apt-get install ca-certificates
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install and configure Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: 1.1.13
+          virtualenvs-create: true
+          virtualenvs-in-project: false
+          installer-parallel: true
+      - name: Install dependencies
+        run: poetry install
+      - name: Run Pylint
+        run: poetry build
