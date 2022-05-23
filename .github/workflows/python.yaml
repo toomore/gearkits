@@ -55,4 +55,4 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Run Pylint
-        run: PYTHONPATH=./ poetry run pylint -v ./gearkits/
+        run: poetry run pylint -v ./gearkits/
