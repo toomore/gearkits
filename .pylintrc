@@ -1,3 +1,0 @@
-[MASTER]
-disable=W0223
-init-hook='import os, sys; sys.path.append(os.getcwd())'
