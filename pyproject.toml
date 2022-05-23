@@ -54,4 +54,6 @@ ignore_missing_imports = true
 
 [tool.pylint.main]
 disable = "W0223"
+
+[tool.pylint.typecheck]
 generated-members = ["googleapiclient.discovery.*"]
