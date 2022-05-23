@@ -53,7 +53,7 @@ module = "gearkits.gsuite"
 ignore_missing_imports = true
 
 [tool.pylint.MASTER]
-disable = ["W0223"]
+disable = ["E1101", "W0223"]
 
 [tool.pylint.TYPECHECK]
 generated-members = ["googleapiclient.discovery.*"]
