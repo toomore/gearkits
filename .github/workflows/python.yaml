@@ -8,7 +8,7 @@ jobs:
   run_test:
     strategy:
       matrix:
-        os: ['ubuntu-20.04', 'ubuntu-22.04', 'macos-11', 'macos-12', 'windows-latest']
+        os: ['ubuntu-20.04', 'ubuntu-22.04']
         python-version: ['3.9', '3.10']
     runs-on: ${{ matrix.os }}
     steps:
@@ -35,7 +35,7 @@ jobs:
   run_pylint:
     strategy:
       matrix:
-        os: ['ubuntu-20.04', 'ubuntu-22.04', 'macos-11', 'macos-12', 'windows-latest']
+        os: ['ubuntu-20.04', 'ubuntu-22.04']
         python-version: ['3.9', '3.10']
     runs-on: ${{ matrix.os }}
     steps:
@@ -62,7 +62,7 @@ jobs:
   run_mypy:
     strategy:
       matrix:
-        os: ['ubuntu-20.04', 'ubuntu-22.04', 'macos-11', 'macos-12', 'windows-latest']
+        os: ['ubuntu-20.04', 'ubuntu-22.04']
         python-version: ['3.9', '3.10']
     runs-on: ${{ matrix.os }}
     steps:
@@ -90,7 +90,7 @@ jobs:
     needs: ['run_test', 'run_pylint', 'run_mypy']
     strategy:
       matrix:
-        os: ['ubuntu-20.04', 'ubuntu-22.04', 'macos-11', 'macos-12', 'windows-latest']
+        os: ['ubuntu-20.04', 'ubuntu-22.04']
         python-version: ['3.9', '3.10']
     runs-on: ${{ matrix.os }}
     steps:
