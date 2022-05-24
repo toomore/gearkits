@@ -116,7 +116,7 @@ jobs:
       - name: Run poetry build
         run: poetry build
 
-  run_build:
+  run_publish:
     needs: ['run_build']
     if: startsWith(github.ref, 'refs/tags/v')
     strategy:
