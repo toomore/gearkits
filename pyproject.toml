@@ -3,16 +3,29 @@ authors = ["Toomore Chiang <toomore0929@gmail.com>"]
 classifiers = [
   "Environment :: Web Environment",
   "Framework :: AWS CDK",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: Chinese (Traditional)",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python",
+  "Topic :: Communications :: Chat",
   "Topic :: Communications :: Email",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 description = "Gather all the general services api in basic usage. This package is built for what we need in our side projects of open source."
 homepage = 'https://github.com/toomore/gearkits'
-keywords = ['API', 'AWS']
+keywords = ['API', 'AWS', 'AWS SES', 'gitlab', 'gsuite', 'ipinfo', 'mattermost', 'telegram']
 license = 'MIT'
 name = "gearkits"
 readme = 'README.md'
 repository = 'https://github.com/toomore/gearkits'
-version = "0.5.1"
+version = "0.6.0"
+packages = [
+    { include = "gearkits" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -20,11 +33,11 @@ requests = "^2.27.1"
 google-api-python-client = "^2.48.0"
 boto3 = "^1.23.5"
 
-[tool.poetry.dev-dependencies]
-autopep8 = "^1.6.0"
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0"
 pylint = "^2.13.9"
 pytest = "^7.1"
-mypy = "^0.950"
+mypy = "^1"
 types-requests = "^2.27.27"
 
 [build-system]
